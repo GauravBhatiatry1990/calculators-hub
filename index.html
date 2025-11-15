@@ -1,267 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="India's #1 Free Calculators Hub: EMI, SIP, GST, BMI, FD, PPF, Tax, Age & 25+ tools. Used by 50,000+ users. Instant, accurate, mobile-friendly." />
-  <meta name="keywords" content="emi calculator, sip calculator, gst calculator, bmi calculator, age calculator, fd calculator, ppf calculator, free online tools india" />
-  <meta name="author" content="Gaurav Bhatia" />
-  <meta name="robots" content="index, follow" />
-  <title>Calculators Hub - #1 Free EMI, SIP, GST, BMI Tools in India</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Calc</text></svg>">
-
+  <title>SmartTools Hub - Free EMI, SIP, GST, PDF Tools</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --p: #4361ee; --ps: #3f37c9; --bg: #fff; --c: #f8f9fa; --t: #1a1a1a; --g: #f0f4ff; --r: 16px; --s: 0 8px 16px rgba(0,0,0,.08); --tr: all 0.3s ease; }
-    [data-theme="dark"] { --bg: #0f0f1a; --c: #1a1a2e; --t: #e0e0ff; --g: #1e1e3a; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--t); line-height: 1.7; transition: var(--tr); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-    
-    /* Header */
-    header { background: var(--bg); box-shadow: 0 2px 20px rgba(0,0,0,.1); position: sticky; top: 0; z-index: 100; }
-    header .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
-    .logo a { color: var(--p); text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 700; }
-    #theme-toggle { background: var(--p); color: #fff; border: none; padding: 0.7rem 1.4rem; border-radius: 12px; cursor: pointer; font-weight: 600; transition: var(--tr); }
-    #theme-toggle:hover { background: var(--ps); transform: translateY(-2px); }
-
-    /* Hero */
-    .hero { text-align: center; padding: 6rem 1rem; background: linear-gradient(135deg, var(--p), var(--ps)); color: #fff; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><path fill=%22%23ffffff10%22 d=%22M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,218.7C960,213,1056,235,1152,245.3C1248,256,1344,256,1392,256L1440,256L1440,600L1392,600C1344,600,1248,600,1152,600C1056,600,960,600,864,600C768,600,672,600,576,600C480,600,384,600,288,600C192,600,96,600,48,600L0,600Z%22/></svg>') bottom no-repeat; background-size: cover; }
-    .hero h1 { font-family: 'Poppins', sans-serif; font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,.2); }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
-    .search { max-width: 600px; margin: 0 auto 2rem; display: flex; box-shadow: 0 10px 30px rgba(0,0,0,.2); border-radius: 16px; overflow: hidden; }
-    .search input { flex: 1; padding: 1.2rem 1.5rem; border: none; font-size: 1.1rem; }
-    .search button { padding: 1.2rem 2rem; background: #fff; color: var(--p); border: none; font-weight: 700; cursor: pointer; }
-    .stats { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
-    .stat { text-align: center; }
-    .stat h3 { font-size: 2.5rem; font-weight: 700; margin: 0; }
-    .stat p { font-size: 1rem; opacity: 0.9; }
-
-    /* Sections */
-    .section { padding: 5rem 0; }
-    .section.bg { background: var(--g); }
-    h2 { text-align: center; font-family: 'Poppins', sans-serif; font-size: 2.4rem; color: var(--p); margin-bottom: 3rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .card { background: var(--c); padding: 2rem; border-radius: var(--r); text-align: center; box-shadow: var(--s); transition: var(--tr); cursor: pointer; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,.15); }
-    .card h3 { margin: 1rem 0 0.5rem; color: var(--p); }
-    .testimonial { background: var(--c); padding: 2rem; border-radius: var(--r); box-shadow: var(--s); text-align: center; font-style: italic; }
-    .testimonial img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 1rem; }
-    .ad { margin: 3rem auto; text-align: center; max-width: 728px; min-height: 100px; background: #f0f0f0; border: 2px dashed #ccc; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-style: italic; color: #666; }
-
-    .calc-section { padding: 3rem 0; border-bottom: 1px solid #eee; display: none; }
-    .calc { background: var(--c); padding: 2rem; border-radius: var(--r); box-shadow: var(--s); max-width: 600px; margin: 2rem auto; display: grid; gap: 1rem; }
-    .calc input, .calc select { padding: 1rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-    .calc button { background: var(--p); color: #fff; padding: 1rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: var(--tr); }
-    .calc button:hover { background: var(--ps); }
-    .result { margin-top: 1rem; padding: 1rem; background: #e8f4fd; border-radius: 8px; display: none; font-weight: 500; }
-
-    footer { background: #0f0f1a; color: #ccc; text-align: center; padding: 3rem 0; font-size: 0.95rem; }
-    footer a { color: var(--p); text-decoration: none; margin: 0 1rem; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.4rem; }
-      .hero p { font-size: 1.1rem; }
-      .stats { gap: 1.5rem; }
-      .stat h3 { font-size: 2rem; }
-    }
+    body { font-family: 'Inter', sans-serif; background:#f8f9fa; color:#1a1a1a; line-height:1.7; }
+    .container { max-width:1200px; margin:auto; padding:1rem; }
+    header { background:#fff; padding:1rem; box-shadow:0 2px 10px rgba(0,0,0,.1); position:sticky; top:0; }
+    .logo { font-size:1.8rem; font-weight:700; color:#4361ee; text-decoration:none; }
+    .hero { text-align:center; padding:4rem 1rem; background:linear-gradient(135deg,#4361ee,#3f37c9); color:#fff; }
+    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+    .search { max-width:600px; margin:2rem auto; display:flex; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.2); }
+    .search input { flex:1; padding:1rem; border:none; font-size:1.1rem; }
+    .search button { padding:1rem 2rem; background:#fff; color:#4361ee; border:none; font-weight:700; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin-top:2rem; }
+    .card { background:#fff; padding:1.5rem; border-radius:12px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,.1); transition:0.3s; }
+    .card:hover { transform:translateY(-8px); }
+    footer { background:#1a1a1a; color:#ccc; text-align:center; padding:2rem; font-size:0.9rem; }
+    footer a { color:#4361ee; text-decoration:none; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="container">
-      <div class="logo"><a href="#">Calculators Hub</a></div>
-      <button id="theme-toggle">Dark Mode</button>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="/" class="logo">SmartToolsHub</a>
+      <button style="background:#4361ee;color:#fff;padding:0.5rem 1rem;border:none;border-radius:8px;" onclick="alert('Dark mode coming soon!')">Dark</button>
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>India's #1 Free Calculators</h1>
-      <p>EMI • SIP • GST • BMI • FD • PPF • Tax • Age & 25+ Tools</p>
-      <p style="font-weight:600; margin:1rem 0;">Used by <strong>50,000+</strong> Indians Daily</p>
+      <h1>50+ Free Tools & Calculators</h1>
+      <p>EMI • SIP • GST • PDF • Image • Code • Health</p>
       <div class="search">
-        <input type="text" id="search" placeholder="Search EMI, SIP, GST, BMI..." />
-        <button onclick="searchCalc()">Search</button>
-      </div>
-      <div class="stats">
-        <div class="stat"><h3 class="counter">25</h3><p>Calculators</p></div>
-        <div class="stat"><h3 class="counter">50000</h3><p>Monthly Users</p></div>
-        <div class="stat"><h3 class="counter">4.9</h3><p>Rating</p></div>
+        <input type="text" placeholder="Search EMI, PDF, GST..." />
+        <button>Search</button>
       </div>
     </div>
   </section>
 
-  <!-- Popular Tools -->
-  <section class="section container">
-    <h2>Most Used Calculators</h2>
+  <section class="container" style="padding:3rem 1rem;">
+    <h2 style="text-align:center; color:#4361ee; margin-bottom:2rem;">Popular Tools</h2>
     <div class="grid">
-      <div class="card" onclick="showCalc('emi')">Home Loan<h3>EMI Calculator</h3></div>
-      <div class="card" onclick="showCalc('sip')">Growth<h3>SIP Calculator</h3></div>
-      <div class="card" onclick="showCalc('gst')">Tax<h3>GST Calculator</h3></div>
-      <div class="card" onclick="showCalc('bmi')">Health<h3>BMI Calculator</h3></div>
-      <div class="card" onclick="showCalc('fd')">Bank<h3>FD Calculator</h3></div>
-      <div class="card" onclick="showCalc('ppf')">Savings<h3>PPF Calculator</h3></div>
-      <div class="card" onclick="showCalc('age')">Age<h3>Age Calculator</h3></div>
-      <div class="card" onclick="showCalc('profit')">Business<h3>Profit Margin</h3></div>
-    </div>
-    <div class="ad">728×90 Ad Space — AdSense Ready</div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section bg container">
-    <h2>What Users Say</h2>
-    <div class="grid">
-      <div class="testimonial">
-        <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ccc%22/></svg>" alt="User">
-        <p>"Best EMI calculator! Saved ₹50,000 in interest."</p>
-        <strong>— Rajesh, Mumbai</strong>
-      </div>
-      <div class="testimonial">
-        <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ccc%22/></svg>" alt="User">
-        <p>"SIP planning made easy. Grew ₹5K to ₹1.2Cr!"</p>
-        <strong>— Priya, Delhi</strong>
-      </div>
+      <div class="card">EMI Calculator</div>
+      <div class="card">SIP Calculator</div>
+      <div class="card">GST Calculator</div>
+      <div class="card">PDF to Word</div>
+      <div class="card">Image Compressor</div>
+      <div class="card">BMI Calculator</div>
     </div>
   </section>
 
-  <!-- Calculator Container -->
-  <div id="calc-container" class="container"></div>
-
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 <strong>Calculators Hub</strong> by Gaurav Bhatia. All rights reserved.</p>
-      <p>
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Use</a> |
-        <a href="contact.html">Contact</a>
-      </p>
-      <p style="margin-top:1rem; font-size:0.85rem; opacity:0.8;">
-        Made in India | AdSense Approved | Updated for 2025
-      </p>
+      <p>© 2025 SmartTools Hub | <a href="privacy.html">Privacy</a> | <a href="contact.html">Contact</a></p>
     </div>
   </footer>
 
-  <!-- Full JavaScript (25+ Calculators + Fixes) -->
-  <script>
-    // Counter Animation
-    document.querySelectorAll('.counter').forEach(counter => {
-      const target = +counter.textContent;
-      let count = 0;
-      const inc = target / 50;
-      const update = () => {
-        if (count < target) {
-          count += inc;
-          counter.textContent = Math.ceil(count);
-          setTimeout(update, 30);
-        } else counter.textContent = target;
-      };
-      const observer = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) update();
-      }, { threshold: 0.5 });
-      observer.observe(counter.parentElement);
-    });
-
-    // Full Calculators Object
-    const calcs = {
-      emi: { name: "EMI Calculator", desc: "Calculate monthly EMI for loans.", inputs: ["Loan Amount (₹)", "Interest Rate (% p.a.)", "Tenure (Years)"], defaults: [1000000, 8.5, 20], calc: (p, r, t) => {
-        let ri = r/12/100, n = t*12, emi = p*ri*Math.pow(1+ri,n)/(Math.pow(1+ri,n)-1);
-        return [`Monthly EMI: <strong>₹${emi.toFixed(0)}</strong>`, `Total Interest: <strong>₹${(emi*n-p).toFixed(0)}</strong>`, `Total Payable: <strong>₹${(emi*n).toFixed(0)}</strong>`];
-      }},
-      sip: { name: "SIP Calculator", desc: "Future value of systematic investments.", inputs: ["Monthly Investment (₹)", "Expected Return (% p.a.)", "Time Period (Years)"], defaults: [5000, 12, 20], calc: (p, r, t) => {
-        let i = r/12/100, n = t*12, fv = p*((Math.pow(1+i,n)-1)/i)*(1+i);
-        return [`Total Invested: <strong>₹${(p*n).toFixed(0)}</strong>`, `Estimated Returns: <strong>₹${(fv-p*n).toFixed(0)}</strong>`, `Future Value: <strong>₹${fv.toFixed(0)}</strong>`];
-      }},
-      gst: { name: "GST Calculator", desc: "Add/remove GST from amounts.", inputs: ["Amount (₹)", "GST Rate (%)"], defaults: [1000, 18], calc: (a, r) => {
-        let gst = a*r/100, total = a+gst;
-        return [`GST Amount: <strong>₹${gst.toFixed(2)}</strong>`, `Total with GST: <strong>₹${total.toFixed(2)}</strong>`];
-      }},
-      bmi: { name: "BMI Calculator", desc: "Body Mass Index for health check.", inputs: ["Weight (kg)", "Height (cm)"], defaults: [70, 170], calc: (w, h) => {
-        let bmi = w/((h/100)**2);
-        let cat = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Normal" : bmi < 30 ? "Overweight" : "Obese";
-        return [`Your BMI: <strong>${bmi.toFixed(1)}</strong>`, `Category: <strong>${cat}</strong>`];
-      }},
-      age: { name: "Age Calculator", desc: "Exact age in years, months, days.", inputs: ["Date of Birth"], defaults: ["2000-01-01"], type: ["date"], calc: (dob) => {
-        let diff = Date.now() - new Date(dob), age = new Date(diff);
-        return [`Years: <strong>${age.getUTCFullYear()-1970}</strong>`, `Months: <strong>${age.getUTCMonth()}</strong>`, `Days: <strong>${age.getUTCDate()-1}</strong>`];
-      }},
-      profit: { name: "Profit Margin Calculator", desc: "Gross profit and margin percentage.", inputs: ["Revenue (₹)", "Cost of Goods (₹)  )"], defaults: [100000, 60000], calc: (r, c) => {
-        let profit = r - c, margin = (profit/r)*100;
-        return [`Profit: <strong>₹${profit.toFixed(0)}</strong>`, `Margin: <strong>${margin.toFixed(1)}%</strong>`];
-      }},
-      fd: { name: "FD Calculator", desc: "Fixed Deposit maturity amount.", inputs: ["Principal (₹)", "Rate (%)", "Tenure (Years)"], defaults: [50000, 7, 5], calc: (p, r, t) => {
-        let amt = p * Math.pow(1 + r/100, t);
-        return [`Maturity Amount: <strong>₹${amt.toFixed(0)}</strong>`, `Interest Earned: <strong>₹${(amt-p).toFixed(0)}</strong>`];
-      }},
-      ppf: { name: "PPF Calculator", desc: "Public Provident Fund growth.", inputs: ["Annual Investment (₹)", "Rate (%)", "Years"], defaults: [150000, 7.1, 15], calc: (p, r, t) => {
-        let amt = 0; for(let i=1;i<=t;i++) amt = (amt + p) * (1 + r/100);
-        return [`Maturity Amount: <strong>₹${amt.toFixed(0)}</strong>`];
-      }}
-      // Add more if needed — all 25+ are included in full version
-    };
-
-    function showCalc(id) {
-      const c = calcs[id];
-      const inputs = c.inputs.map((label, i) => {
-        let type = c.type && c.type[i] ? c.type[i] : 'number';
-        let extra = label.includes('Rate') ? 'step="0.01"' : '';
-        let opt = c.options && c.options[i] ? `<select id="in${i}" ${extra}>${c.options[i].map(o => `<option>${o}</option>`).join('')}</select>` : `<input id="in${i}" type="${type}" value="${c.defaults[i]}" ${extra} />`;
-        return `<label>${label}</label>${opt}`;
-      }).join('');
-
-      const html = `
-        <div class="calc-section" style="display:block;">
-          <h2>${c.name}</h2>
-          <p style="text-align:center; margin-bottom:1.5rem; font-style:italic;">${c.desc}</p>
-          <div class="calc">
-            ${inputs}
-            <button onclick="runCalc('${id}')">Calculate</button>
-            <div id="result" class="result"></div>
-          </div>
-          <div class="ad">300x250 Ad Placeholder</div>
-          <article style="margin-top:2rem; line-height:1.8;">
-            <h3>About ${c.name}</h3>
-            <p>Full 500+ word guide: Formula, examples, 2025 rates, tips, FAQs. <strong>Pro Tip:</strong> Use for planning!</p>
-          </article>
-          <div class="ad">728x90 Ad Placeholder</div>
-        </div>`;
-      
-      document.getElementById('calc-container').innerHTML = html;
-      window.scrollTo(0, document.querySelector('.calc-section').offsetTop - 100);
-    }
-
-    function runCalc(id) {
-      const c = calcs[id];
-      const values = c.inputs.map((_, i) => {
-        const el = document.getElementById(`in${i}`);
-        return el.tagName === 'SELECT' ? el.value : (el.type === 'date' ? el.value : parseFloat(el.value) || 0);
-      });
-      const result = c.calc(...values);
-      document.getElementById('result').innerHTML = result.map(r => `<p>${r}</p>`).join('');
-      document.getElementById('result').style.display = 'block';
-    }
-
-    function searchCalc() {
-      const q = document.getElementById('search').value.trim().toLowerCase();
-      const match = Object.keys(calcs).find(k => calcs[k].name.toLowerCase().includes(q));
-      if (match) showCalc(match);
-      else alert('Not found! Try "emi", "sip", "gst"...');
-    }
-
-    // Theme Toggle
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      document.getElementById('theme-toggle').textContent = isDark ? 'Dark Mode' : 'Light Mode';
-    });
-  </script>
 </body>
 </html>
