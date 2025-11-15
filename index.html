@@ -3,177 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Free online calculators: EMI, SIP, GST, BMI, Age, Tax & 25+ tools. Instant, accurate, mobile-friendly. No signup needed." />
-  <meta name="keywords" content="emi calculator, sip calculator, gst calculator, bmi calculator, free online tools, calculators hub" />
+  <meta name="description" content="25+ Free Online Calculators: EMI, SIP, GST, BMI, Age, Tax, Profit Margin & more. Instant, accurate, mobile-friendly." />
+  <meta name="keywords" content="emi calculator, sip calculator, gst calculator, bmi calculator, age calculator, profit margin, free tools" />
   <meta name="author" content="Gaurav Bhatia" />
   <meta name="robots" content="index, follow" />
+  <title>Calculators Hub - 25+ Free EMI, SIP, GST, BMI Tools</title>
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Calculators Hub - 25+ Free Online Calculators" />
-  <meta property="og:description" content="EMI, SIP, GST, BMI, Age, Tax & more. Instant results. Works on mobile." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gauravbhatiatry1990.github.io/calculators-hub/" />
-  <meta property="og:image" content="https://gauravbhatiatry1990.github.io/calculators-hub/assets/img/og-image.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Calculators Hub - Free EMI, SIP, GST Tools" />
-  <meta name="twitter:description" content="Instant calculators. No app. No signup." />
-
-  <title>Calculators Hub - Free EMI, SIP, GST, BMI & 25+ Tools</title>
-
-  <!-- Google Fonts: Inter (Professional & Fast) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Calculator</text></svg>">
 
   <style>
-    :root {
-      --primary: #4361ee;
-      --primary-dark: #3f37c9;
-      --text: #1a1a1a;
-      --text-light: #f8f9fa;
-      --bg: #ffffff;
-      --card-bg: #f8f9fa;
-      --border: #e2e8f0;
-      --shadow: 0 6px 12px rgba(0,0,0,0.06);
-      --radius: 16px;
-      --transition: all 0.3s ease;
-    }
-    [data-theme="dark"] {
-      --text: #f8f9fa;
-      --bg: #121212;
-      --card-bg: #1e1e1e;
-      --border: #333;
-      --text-light: #aaa;
-    }
-
+    :root { --p: #4361ee; --bg: #fff; --c: #f8f9fa; --t: #1a1a1a; --r: 16px; --s: 0 6px 12px rgba(0,0,0,.06); }
+    [data-theme="dark"] { --bg: #121212; --c: #1e1e1e; --t: #f8f9fa; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Inter', 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      transition: var(--transition);
-    }
-    a { color: var(--primary); text-decoration: none; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--t); line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-
-    /* Header */
-    header {
-      background: var(--bg);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      position: sticky; top: 0; z-index: 100;
-    }
-    header .container {
-      display: flex; justify-content: space-between; align-items: center; padding: 1rem;
-    }
-    .logo h1 {
-      font-size: 1.6rem; font-weight: 700;
-    }
-    .logo a { color: var(--primary); }
-    nav ul {
-      display: flex; gap: 1.8rem; list-style: none;
-    }
-    nav a {
-      font-weight: 500; color: var(--text); transition: var(--transition);
-    }
-    nav a:hover { color: var(--primary); }
-    #theme-toggle {
-      background: var(--primary); color: #fff; border: none;
-      padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer;
-      font-weight: 600; font-size: 0.9rem; transition: var(--transition);
-    }
-    #theme-toggle:hover { background: var(--primary-dark); }
-
-    /* Hero Section */
-    .hero {
-      text-align: center; padding: 5rem 1rem;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff; border-radius: 0 0 var(--radius) var(--radius);
-    }
-    .hero h2 {
-      font-size: 2.8rem; font-weight: 700; margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9;
-    }
-    .search-bar {
-      max-width: 520px; margin: 0 auto; display: flex; box-shadow: var(--shadow);
-    }
-    .search-bar input {
-      flex: 1; padding: 1rem 1.2rem; border: none; border-radius: 8px 0 0 8px;
-      font-size: 1rem; outline: none;
-    }
-    .search-bar button {
-      padding: 1rem 1.8rem; background: #fff; color: var(--primary);
-      border: none; border-radius: 0 8px 8px 0; cursor: pointer;
-      font-weight: 600; transition: var(--transition);
-    }
-    .search-bar button:hover { background: #f0f0f0; }
-
-    /* Sections */
-    .section { padding: 4rem 0; }
-    .section.bg-light { background: var(--card-bg); }
-    h2 {
-      text-align: center; font-size: 2.2rem; font-weight: 600; margin-bottom: 2rem;
-      color: var(--text);
-    }
-
-    /* Grid & Cards */
-    .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem; margin-top: 1.5rem;
-    }
-    .card {
-      background: var(--card-bg); padding: 1.8rem; border-radius: var(--radius);
-      text-align: center; transition: var(--transition); box-shadow: var(--shadow);
-      font-weight: 500; font-size: 1.1rem;
-    }
-    .card:hover {
-      transform: translateY(-8px); box-shadow: 0 16px 32px rgba(0,0,0,0.12);
-    }
-    .card a {
-      color: var(--text); display: block; height: 100%;
-    }
-
-    /* Ad Placeholder */
-    .ad-placeholder {
-      margin: 3rem auto; text-align: center; max-width: 728px;
-      min-height: 100px; background: #f0f0f0; border: 2px dashed #ccc;
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-style: italic; color: #666; font-size: 0.95rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #1a1a1a; color: #ccc; text-align: center; padding: 2.5rem 0;
-      font-size: 0.9rem;
-    }
-    footer a { color: var(--primary); }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; }
-      nav { display: none; }
-      .search-bar { max-width: 100%; }
-    }
+    header { background: var(--bg); box-shadow: 0 2px 12px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
+    .logo a { color: var(--p); text-decoration: none; font-weight: 700; font-size: 1.5rem; }
+    #theme-toggle { background: var(--p); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .hero { text-align: center; padding: 5rem 1rem; background: linear-gradient(135deg, var(--p), #3f37c9); color: #fff; }
+    .hero h1 { font-size: 2.8rem; font-weight: 700; }
+    .search { max-width: 500px; margin: 1.5rem auto; display: flex; }
+    .search input { flex: 1; padding: 1rem; border: none; border-radius: 8px 0 0 8px; }
+    .search button { padding: 1rem 1.8rem; background: #fff; color: var(--p); border: none; border-radius: 0 8px 8px 0; cursor: pointer; font-weight: 600; }
+    .calc-section { padding: 3rem 0; border-bottom: 1px solid #eee; }
+    .calc-section h2 { text-align: center; margin-bottom: 2rem; color: var(--p); font-size: 1.8rem; }
+    .calc { background: var(--c); padding: 2rem; border-radius: var(--r); box-shadow: var(--s); max-width: 600px; margin: 2rem auto; display: grid; gap: 1rem; }
+    .calc input, .calc select { padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
+    .calc button { background: var(--p); color: #fff; padding: 1rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .result { margin-top: 1rem; padding: 1rem; background: #e8f4fd; border-radius: 8px; display: none; }
+    .ad { margin: 2rem auto; text-align: center; max-width: 728px; min-height: 100px; background: #f0f0f0; border: 2px dashed #ccc; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-style: italic; color: #666; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .card { background: var(--c); padding: 1.5rem; border-radius: var(--r); text-align: center; box-shadow: var(--s); cursor: pointer; transition: all 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,.1); }
+    footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 2rem 0; font-size: 0.9rem; }
+    @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="container">
-      <div class="logo">
-        <h1><a href="../index.html">← Calculators Hub</a></h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#trending">Trending</a></li>
-          <li><a href="#request">Request Tool</a></li>
-        </ul>
-      </nav>
+      <div class="logo"><a href="#">Calculators Hub</a></div>
       <button id="theme-toggle">Dark Mode</button>
     </div>
   </header>
@@ -181,93 +55,106 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h2>Instant Online Calculators</h2>
-      <p>EMI • SIP • GST • BMI • Age • Tax & 25+ More</p>
-      <div class="search-bar">
-        <input type="text" id="search" placeholder="Search EMI, SIP, GST..." autocomplete="off" />
-        <button>Search</button>
+      <h1>25+ Free Calculators</h1>
+      <p>EMI • SIP • GST • BMI • Age • Tax • Profit & More</p>
+      <div class="search">
+        <input type="text" id="search" placeholder="Search EMI, SIP, GST..." />
+        <button onclick="searchCalc()">Search</button>
       </div>
     </div>
   </section>
 
-  <!-- Popular Calculators -->
-  <section id="popular" class="section">
-    <div class="container">
-      <h2>Popular Calculators</h2>
-      <div class="grid">
-        <div class="card"><a href="finance/emi-calculator.html">EMI Calculator</a></div>
-        <div class="card"><a href="investment/sip-calculator.html">SIP Calculator</a></div>
-        <div class="card"><a href="tax/gst-calculator.html">GST Calculator</a></div>
-        <div class="card"><a href="health/bmi-calculator.html">BMI Calculator</a></div>
-        <div class="card"><a href="utility/age-calculator.html">Age Calculator</a></div>
-        <div class="card"><a href="business/profit-margin.html">Profit Margin</a></div>
-      </div>
-      <div class="ad-placeholder">728×90 Ad Space — AdSense Ready</div>
+  <!-- Quick Links -->
+  <section class="container">
+    <div class="grid">
+      <div class="card" onclick="showCalc('emi')">EMI Calculator</div>
+      <div class="card" onclick="showCalc('sip')">SIP Calculator</div>
+      <div class="card" onclick="showCalc('gst')">GST Calculator</div>
+      <div class="card" onclick="showCalc('bmi')">BMI Calculator</div>
+      <div class="card" onclick="showCalc('age')">Age Calculator</div>
+      <div class="card" onclick="showCalc('profit')">Profit Margin</div>
     </div>
   </section>
 
-  <!-- Categories -->
-  <section id="categories" class="section bg-light">
-    <div class="container">
-      <h2>Categories</h2>
-      <div class="grid">
-        <div class="card"><a href="#">Finance</a></div>
-        <div class="card"><a href="#">Loan/EMI</a></div>
-        <div class="card"><a href="#">Investment</a></div>
-        <div class="card"><a href="#">Business</a></div>
-        <div class="card"><a href="#">Health</a></div>
-        <div class="card"><a href="#">Utility</a></div>
-        <div class="card"><a href="#">Tax</a></div>
-      </div>
-    </div>
-  </section>
+  <!-- All Calculators -->
+  <div id="calc-container" class="container"></div>
 
-  <!-- Request Form -->
-  <section id="request" class="section">
-    <div class="container">
-      <h2>Request a Calculator</h2>
-      <form id="request-form" style="max-width:600px;margin:2rem auto;display:grid;gap:1rem;">
-        <input type="text" placeholder="Calculator Name (e.g., Car Loan EMI)" required />
-        <textarea placeholder="Describe what it should calculate..." rows="4" required></textarea>
-        <button type="submit" style="background:var(--primary);color:#fff;padding:1rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Submit Request</button>
-      </form>
-    </div>
-  </section>
+  <!-- AdSense -->
+  <div class="ad">728×90 Ad Space — AdSense Ready</div>
 
   <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 <strong>Calculators Hub</strong> by Gaurav Bhatia. All rights reserved.</p>
-      <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+      <p><a href="#" style="color:var(--p)">Privacy Policy</a> | <a href="#" style="color:var(--p)">Terms</a></p>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- All Calculators Data -->
   <script>
-    // Theme Toggle
-    const toggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    toggle.addEventListener('click', () => {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      toggle.textContent = isDark ? 'Dark Mode' : 'Light Mode';
-    });
+    const calcs = {
+      emi: { name: "EMI Calculator", inputs: ["Loan (₹)", "Rate (%)", "Tenure (Y)"], calc: (a,b,c) => {
+        let r = b/12/100, n = c*12, emi = a*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+        return [`EMI: ₹${emi.toFixed(0)}`, `Interest: ₹${(emi*n-a).toFixed(0)}`, `Total: ₹${(emi*n).toFixed(0)}`];
+      }},
+      sip: { name: "SIP Calculator", inputs: ["Monthly (₹)", "Return (%)", "Years"], calc: (p,r,y) => {
+        let i = r/12/100, n = y*12, fv = p*((Math.pow(1+i,n)-1)/i)*(1+i);
+        return [`Invested: ₹${(p*n).toFixed(0)}`, `Returns: ₹${(fv-p*n).toFixed(0)}`, `Total: ₹${fv.toFixed(0)}`];
+      }},
+      gst: { name: "GST Calculator", inputs: ["Amount (₹)", "GST Rate (%)"], calc: (a,r) => {
+        let gst = a*r/100, total = a+gst;
+        return [`GST: ₹${gst.toFixed(2)}`, `Total: ₹${total.toFixed(2)}`];
+      }},
+      bmi: { name: "BMI Calculator", inputs: ["Weight (kg)", "Height (cm)"], calc: (w,h) => {
+        let bmi = w/((h/100)**2);
+        return [`BMI: ${bmi.toFixed(1)}`, bmi<18.5?"Underweight":bmi<25?"Normal":bmi<30?"Overweight":"Obese"];
+      }},
+      age: { name: "Age Calculator", inputs: ["DOB (YYYY-MM-DD)"], calc: (dob) => {
+        let diff = Date.now() - new Date(dob), age = new Date(diff);
+        return [`Years: ${age.getUTCFullYear()-1970}`, `Months: ${age.getUTCMonth()}`, `Days: ${age.getUTCDate()-1}`];
+      }},
+      profit: { name: "Profit Margin", inputs: ["Revenue (₹)", "Cost (₹)"], calc: (r,c) => {
+        let profit = r-c, margin = (profit/r)*100;
+        return [`Profit: ₹${profit.toFixed(0)}`, `Margin: ${margin.toFixed(1)}%`];
+      }}
+    };
 
-    // Search (placeholder)
-    document.querySelector('.search-bar button').addEventListener('click', () => {
-      const q = document.getElementById('search').value.trim();
-      if (q) alert(`Searching for: ${q}... (Coming soon!)`);
-    });
+    function showCalc(id) {
+      const c = calcs[id];
+      const html = `
+        <div class="calc-section">
+          <h2>${c.name}</h2>
+          <div class="calc">
+            ${c.inputs.map((l,i) => `<label>${l}</label><input id="i${i}" ${l.includes('DOB')?'type="date"':''} value="${[1000000,8.5,20,5000,12,20,1000,18,70,170,'2000-01-01',100000,60000][i]||''}">`).join('')}
+            <button onclick="runCalc('${id}')">Calculate</button>
+            <div id="res" class="result"></div>
+          </div>
+          <div class="ad">300x250 Ad</div>
+          <article><h3>About ${c.name}</h3><p>Full 500+ word guide with formula, examples, 2025 rates, tax tips, and FAQs...</p></article>
+        </div>`;
+      document.getElementById('calc-container').innerHTML = html;
+      window.scrollTo(0, document.querySelector('.calc-section').offsetTop - 100);
+    }
 
-    // Request Form
-    document.getElementById('request-form')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thank you! We’ll add your calculator soon.');
-      e.target.reset();
+    function runCalc(id) {
+      const c = calcs[id], inputs = c.inputs.map((_,i) => +document.getElementById(`i${i}`).value || document.getElementById(`i${i}`).value);
+      const res = c.calc(...inputs);
+      document.getElementById('res').innerHTML = res.map(r => `<p><strong>${r}</strong></p>`).join('');
+      document.getElementById('res').style.display = 'block';
+    }
+
+    function searchCalc() {
+      const q = document.getElementById('search').value.toLowerCase();
+      const match = Object.keys(calcs).find(k => calcs[k].name.toLowerCase().includes(q));
+      if (match) showCalc(match); else alert('Not found! Try EMI, SIP, GST...');
+    }
+
+    // Theme
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('theme-toggle').textContent = isDark ? 'Dark Mode' : 'Light Mode';
     });
   </script>
-
-  <!-- AdSense (Uncomment when approved) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 </body>
 </html>
